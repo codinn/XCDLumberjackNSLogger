@@ -3,7 +3,6 @@
 //
 
 #import <CocoaLumberjack/CocoaLumberjack.h>
-#import <NSLogger/LoggerClient.h>
 
 /**
  *  The `XCDLumberjackNSLogger` class implements a [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack) logger which sends logs to [NSLogger](https://github.com/fpillet/NSLogger).
@@ -28,19 +27,6 @@
  *  @return A logger with the specified bonjour service name.
  */
 - (instancetype) initWithBonjourServiceName:(NSString *)bonjourServiceName NS_DESIGNATED_INITIALIZER;
-
-/**
- *  -------------------------------------
- *  @name Accessing the underlying logger
- *  -------------------------------------
- */
-
-/**
- *  The underlying NSLogger struct.
- *
- *  @discussion Use the underlying logger if you need fine-grained control. For example, you may want to call `LoggerSetViewerHost(lubmerjackNSLogger.logger, host, port)` if you are in a Bonjour-hostile network. You may also use this property to tweak the logger options with the `LoggerSetOptions` function.
- */
-@property (readonly) Logger *logger;
 
 /**
  *  ----------------------------------

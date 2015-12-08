@@ -3,6 +3,24 @@
 //
 
 #import "XCDLumberjackNSLogger.h"
+#import "LoggerClient.h"
+
+@interface XCDLumberjackNSLogger ()
+
+/**
+ *  -------------------------------------
+ *  @name Accessing the underlying logger
+ *  -------------------------------------
+ */
+
+/**
+ *  The underlying NSLogger struct.
+ *
+ *  @discussion Use the underlying logger if you need fine-grained control. For example, you may want to call `LoggerSetViewerHost(lubmerjackNSLogger.logger, host, port)` if you are in a Bonjour-hostile network. You may also use this property to tweak the logger options with the `LoggerSetOptions` function.
+ */
+@property (readonly) Logger *logger;
+
+@end
 
 @implementation XCDLumberjackNSLogger
 
